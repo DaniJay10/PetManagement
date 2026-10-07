@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="petmangement.client/petmangement.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="PetMangement.Server/PetMangement.Server.csproj" />
+</Solution>
