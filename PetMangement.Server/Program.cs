@@ -1,3 +1,5 @@
+using PetMangement.Server.Repositories.Pet;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +17,8 @@ builder.Services.AddCors(options =>
 });
 
 //Repositories
+builder.Services.AddScoped<IPetRepository, PetRepository>();
+
 
 //Services
 

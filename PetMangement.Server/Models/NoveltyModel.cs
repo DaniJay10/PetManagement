@@ -5,12 +5,12 @@ namespace PetMangement.Server.Models
     public class NoveltyModel
     {
         [Required]
-        private int noveltyId {  get; set; }
+        public int noveltyId {  get; set; }
         [Required]
-        private int petId { get; set; }
+        public int petId { get; set; }
         [Required]
-        private DateTime noveltyDate { get; set; }
+        public DateTime noveltyDate { get; set; }
         [Required]
-        private string descripcion { get; set; }
+        public string descripcion { get; set; }
     }
 }

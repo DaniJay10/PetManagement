@@ -5,11 +5,11 @@ namespace PetMangement.Server.Models
     public class DewormingModel
     {
         [Required]
-        private int dewormingId {get; set;}
+        public int dewormingId {get; set;}
         [Required]
-        private int petId {get; set;}
+        public int petId {get; set;}
         [Required]
-        private DateTime applicationDate {get; set;}
+        public DateTime applicationDate {get; set;}
 
     }
 }

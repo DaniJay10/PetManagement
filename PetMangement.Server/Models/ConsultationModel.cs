@@ -5,16 +5,16 @@ namespace PetMangement.Server.Models
     public class ConsultationModel
     {
         [Required]
-        private int consultationId { get; set; }
+        public int consultationId { get; set; }
         [Required]
-        private int petId { get; set; }
+        public int petId { get; set; }
         [Required]
-        private DateTime consultationDate { get; set; }
+        public DateTime consultationDate { get; set; }
         [Required]
-        private string reason { get; set; }
+        public string reason { get; set; }
         [Required]
-        private string diagnosis { get; set; }
+        public string diagnosis { get; set; }
         [Required]
-        private string notes { get; set; }
+        public string notes { get; set; }
     }
 }
