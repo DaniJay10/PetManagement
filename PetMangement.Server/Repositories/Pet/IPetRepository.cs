@@ -29,7 +29,7 @@ namespace PetMangement.Server.Repositories.Pet
         /// </summary>
         /// <param name="Pet"></param>
         /// <returns></returns>
-        public bool EditPet(PetModel Pet);
+        public bool UpdatePet(PetModel Pet);
 
         /// <summary>
         /// Delete one record from pet

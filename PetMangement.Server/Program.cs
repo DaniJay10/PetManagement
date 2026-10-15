@@ -1,4 +1,5 @@
 using PetMangement.Server.Repositories.Pet;
+using PetMangement.Server.Services.Pet;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddScoped<IPetRepository, PetRepository>();
 
 
 //Services
+builder.Services.AddScoped<IPetService, PetService>();
 
 var app = builder.Build();
 

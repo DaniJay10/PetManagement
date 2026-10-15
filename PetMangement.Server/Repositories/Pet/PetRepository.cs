@@ -99,14 +99,14 @@ namespace PetMangement.Server.Repositories.Pet
 
                     SqlCommand cmd = new SqlCommand("PM_PET_CREATE", connection);
 
-                    cmd.Parameters.AddWithValue("petId", Pet.petId);
-                    cmd.Parameters.AddWithValue("petName", Pet.petName);
-                    cmd.Parameters.AddWithValue("specie", Pet.specie);
-                    cmd.Parameters.AddWithValue("breed", Pet.breed);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.birthDate);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.petWeight);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.petSize);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.deworingFrequency);
+                    cmd.Parameters.AddWithValue("@petId", Pet.petId);
+                    cmd.Parameters.AddWithValue("@petName", Pet.petName);
+                    cmd.Parameters.AddWithValue("@specie", Pet.specie);
+                    cmd.Parameters.AddWithValue("@breed", Pet.breed);
+                    cmd.Parameters.AddWithValue("@birthDate", Pet.birthDate);
+                    cmd.Parameters.AddWithValue("@petWeight", Pet.petWeight);
+                    cmd.Parameters.AddWithValue("@petSize", Pet.petSize);
+                    cmd.Parameters.AddWithValue("@deworingFrequency", Pet.deworingFrequency);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
 
@@ -127,7 +127,7 @@ namespace PetMangement.Server.Repositories.Pet
         /// </summary>
         /// <param name="Pet"></param>
         /// <returns></returns>
-        public bool EditPet(PetModel Pet)
+        public bool UpdatePet(PetModel Pet)
         {
             var savePet = false;
 
@@ -139,14 +139,14 @@ namespace PetMangement.Server.Repositories.Pet
 
                     SqlCommand cmd = new SqlCommand("PM_PET_UPDATE", connection);
 
-                    cmd.Parameters.AddWithValue("petId", Pet.petId);
-                    cmd.Parameters.AddWithValue("petName", Pet.petName);
-                    cmd.Parameters.AddWithValue("specie", Pet.specie);
-                    cmd.Parameters.AddWithValue("breed", Pet.breed);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.birthDate);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.petWeight);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.petSize);
-                    cmd.Parameters.AddWithValue("birthDate", Pet.deworingFrequency);
+                    cmd.Parameters.AddWithValue("@petId", Pet.petId);
+                    cmd.Parameters.AddWithValue("@petName", Pet.petName);
+                    cmd.Parameters.AddWithValue("@specie", Pet.specie);
+                    cmd.Parameters.AddWithValue("@breed", Pet.breed);
+                    cmd.Parameters.AddWithValue("@birthDate", Pet.birthDate);
+                    cmd.Parameters.AddWithValue("@petWeight", Pet.petWeight);
+                    cmd.Parameters.AddWithValue("@petSize", Pet.petSize);
+                    cmd.Parameters.AddWithValue("@deworingFrequency", Pet.deworingFrequency);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
 
