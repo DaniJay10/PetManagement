@@ -178,7 +178,7 @@ namespace PetMangement.Server.Repositories.Pet
                     connection.Open();
 
                     SqlCommand cmd = new SqlCommand("PM_PET_DELETE", connection);
-                    cmd.Parameters.AddWithValue("PetId", PetId);
+                    cmd.Parameters.AddWithValue("@PetId", PetId);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
 
