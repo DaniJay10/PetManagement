@@ -19,6 +19,6 @@ namespace PetMangement.Server.Models
         [Required]
         public string petSize { get; set; }
         [Required]
-        public int deworingFrequency { get; set; }
+        public int dewormingFrequency { get; set; }
     }
 }

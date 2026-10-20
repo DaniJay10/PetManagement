@@ -47,7 +47,7 @@ namespace PetMangement.Server.Services.Pet
                 birthDate = pet.birthDate,
                 petWeight = pet.petWeight,
                 petSize = pet.petSize,
-                deworingFrequency = pet.dewormingFrequency
+                dewormingFrequency = pet.dewormingFrequency
             };
 
             return _repository.InsertPet(petModel);
@@ -69,7 +69,7 @@ namespace PetMangement.Server.Services.Pet
                 birthDate = pet.birthDate,
                 petWeight = pet.petWeight,
                 petSize = pet.petSize,
-                deworingFrequency = pet.dewormingFrequency
+                dewormingFrequency = pet.dewormingFrequency
             };
 
             return _repository.UpdatePet(petModel);
