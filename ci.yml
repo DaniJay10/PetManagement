@@ -1,0 +1,26 @@
+name: Backend CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [desarrollo, pruebas]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore PetMangement.Server/PetMangement.Server.csproj
+
+      - name: Compilar backend
+        run: dotnet build PetMangement.Server/PetMangement.Server.csproj --no-restore
