@@ -1,4 +1,6 @@
+using PetMangement.Server.Repositories.Consultation;
 using PetMangement.Server.Repositories.Pet;
+using PetMangement.Server.Services.Consultation;
 using PetMangement.Server.Services.Pet;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,10 +25,11 @@ builder.Services.AddCors(options =>
 
 //Repositories
 builder.Services.AddScoped<IPetRepository, PetRepository>();
-
+builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
 
 //Services
 builder.Services.AddScoped<IPetService, PetService>();
+builder.Services.AddScoped<IConsultationService, ConsultationService>();
 
 var app = builder.Build();
 

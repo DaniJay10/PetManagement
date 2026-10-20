@@ -3,7 +3,7 @@ using PetMangement.Server.DTOs.Pet;
 using PetMangement.Server.Models;
 using PetMangement.Server.Services.Pet;
 
-namespace PetMangement.Server.Controllers
+namespace PetMangement.Server.Controllers.Pet
 {
     [ApiController]
     [Route("api/[controller]")]

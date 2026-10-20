@@ -34,7 +34,7 @@ namespace PetMangement.Server.Repositories.Consultation
                             reason = dr["reason"].ToString(),
                             diagnosis = dr["diagnosis"].ToString(),
                             notes = dr["notes"].ToString(),
-                            consultationDate = Convert.ToDateTime(dr["onsultationDate"]),
+                            consultationDate = Convert.ToDateTime(dr["consultationDate"]),
                         });
                     }
                 }
