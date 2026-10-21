@@ -1,5 +1,4 @@
 ﻿using PetMangement.Server.DTOs.Consultation;
-using PetMangement.Server.DTOs.Pet;
 using PetMangement.Server.Models;
 using PetMangement.Server.Repositories.Consultation;
 
