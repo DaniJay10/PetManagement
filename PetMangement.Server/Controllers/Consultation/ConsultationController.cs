@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PetMangement.Server.DTOs.Consultation;
-using PetMangement.Server.DTOs.Pet;
 using PetMangement.Server.Services.Consultation;
-using PetMangement.Server.Services.Pet;
 
 namespace PetMangement.Server.Controllers.Consultation
 {
@@ -36,7 +34,7 @@ namespace PetMangement.Server.Controllers.Consultation
         [HttpGet("{consultationId}")]
         public IActionResult GetConsultationById(int consultationId)
         {
-            var consultation = _consultationService.GetConsultation(consultationId);
+            var consultation = _consultationService.GetConsultationById(consultationId);
             if (consultation == null)
                 return NotFound();
             return Ok(consultation);
@@ -49,9 +47,9 @@ namespace PetMangement.Server.Controllers.Consultation
         /// <param name="consultation"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult InsertConsultation([FromBody] CreateConsultDTO consultation)
+        public IActionResult CreateConsultation([FromBody] CreateConsultDTO consultation)
         {
-            var result = _consultationService.InsertConsultation(consultation);
+            var result = _consultationService.CreateConsultation(consultation);
             if (!result)
                 return BadRequest("Error al guardar");
             return StatusCode(201, result);
@@ -63,7 +61,7 @@ namespace PetMangement.Server.Controllers.Consultation
         /// <param name="Pet"></param>
         /// <returns></returns>
         [HttpPut("{consultationId}")]
-        public IActionResult UpdatePet(int consultationId, [FromBody] UpdateConsultDTO consultation)
+        public IActionResult UpdateConsultation(int consultationId, [FromBody] UpdateConsultDTO consultation)
         {
             consultation.consultationId = consultationId;
             var result = _consultationService.UpdateConsultation(consultation);
@@ -78,7 +76,7 @@ namespace PetMangement.Server.Controllers.Consultation
         /// <param name="consultationId"></param>
         /// <returns></returns>
         [HttpDelete("{consultationId}")]
-        public IActionResult DeletePet(int consultationId)
+        public IActionResult DeleteConsultation(int consultationId)
         {
             var result = _consultationService.DeleteConsultation(consultationId);
             if (!result)

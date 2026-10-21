@@ -35,7 +35,7 @@ namespace PetMangement.Server.Controllers.Pet
         [HttpGet("{petId}")]
         public IActionResult GetPetById(int petId)
         {
-            var pet = _petService.GetPet(petId);
+            var pet = _petService.GetPetById(petId);
             if (pet == null)
                 return NotFound();
             return Ok(pet);
@@ -47,9 +47,9 @@ namespace PetMangement.Server.Controllers.Pet
         /// <param name="pet"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult InsertPet([FromBody] CreatePetDTO pet)
+        public IActionResult CreatePet([FromBody] CreatePetDTO pet)
         {
-            var result = _petService.InsertPet(pet);
+            var result = _petService.CreatePet(pet);
             if (!result)
                 return BadRequest("Error al guardar");
             return StatusCode(201, result);
