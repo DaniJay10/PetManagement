@@ -2,7 +2,7 @@
 
 namespace PetMangement.Server.Models
 {
-    public class Shower
+    public class ShowerModel
     {
         [Required]
         public int showerId {  get; set; }

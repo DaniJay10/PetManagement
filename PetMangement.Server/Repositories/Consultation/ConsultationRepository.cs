@@ -48,7 +48,7 @@ namespace PetMangement.Server.Repositories.Consultation
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public ConsultationModel GetConsultation(int consultationId)
+        public ConsultationModel GetConsultationById(int consultationId)
         {
             var consultation = new ConsultationModel();
 
@@ -82,7 +82,7 @@ namespace PetMangement.Server.Repositories.Consultation
         /// </summary>
         /// <param name="Consultation"></param>
         /// <returns></returns>
-        public bool InsertConsultation(ConsultationModel consultation)
+        public bool CreateConsultation(ConsultationModel consultation)
         {
             var saveConsultation = false;
 
@@ -154,7 +154,7 @@ namespace PetMangement.Server.Repositories.Consultation
         }
 
         /// <summary>
-        /// Delete one record from consultation
+        /// Delete one record of consultation
         /// </summary>
         /// <param name="consultationId"></param>
         /// <returns></returns>

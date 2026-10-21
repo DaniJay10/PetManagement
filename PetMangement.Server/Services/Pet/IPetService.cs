@@ -20,14 +20,14 @@ namespace PetMangement.Server.Services.Pet
         /// </summary>
         /// <param name="petId"></param>
         /// <returns></returns>
-        public PetModel GetPet(int petId);
+        public PetModel GetPetById(int petId);
 
         /// <summary>
         /// Insert one record in the DB
         /// </summary>
         /// <param name="Pet"></param>
         /// <returns></returns>
-        public bool InsertPet(CreatePetDTO pet);
+        public bool CreatePet(CreatePetDTO pet);
 
         /// <summary>
         /// Update one record in the DB

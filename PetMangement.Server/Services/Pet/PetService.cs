@@ -27,9 +27,9 @@ namespace PetMangement.Server.Services.Pet
         /// </summary>
         /// <param name="petId"></param>
         /// <returns></returns>
-        public PetModel GetPet(int petId) 
+        public PetModel GetPetById(int petId) 
         {
-            return _repository.GetPet(petId);
+            return _repository.GetPetById(petId);
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace PetMangement.Server.Services.Pet
         /// </summary>
         /// <param name="Pet"></param>
         /// <returns></returns>
-        public bool InsertPet(CreatePetDTO pet)
+        public bool CreatePet(CreatePetDTO pet)
         {
             var petModel = new PetModel
             {
@@ -50,7 +50,7 @@ namespace PetMangement.Server.Services.Pet
                 dewormingFrequency = pet.dewormingFrequency
             };
 
-            return _repository.InsertPet(petModel);
+            return _repository.CreatePet(petModel);
         }
 
         /// <summary>

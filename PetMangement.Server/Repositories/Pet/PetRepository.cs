@@ -51,7 +51,7 @@ namespace PetMangement.Server.Repositories.Pet
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public PetModel GetPet(int petId) 
+        public PetModel GetPetById(int petId) 
         {
             var pet = new PetModel();
 
@@ -87,7 +87,7 @@ namespace PetMangement.Server.Repositories.Pet
         /// </summary>
         /// <param name="Pet"></param>
         /// <returns></returns>
-        public bool InsertPet(PetModel Pet)
+        public bool CreatePet(PetModel Pet)
         {
             var savePet = false;
 
