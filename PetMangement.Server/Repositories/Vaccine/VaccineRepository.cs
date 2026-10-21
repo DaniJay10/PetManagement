@@ -146,9 +146,9 @@ namespace PetMangement.Server.Repositories.Vaccine
         }
 
         /// <summary>
-        /// Delete one record of consultation
+        /// Delete one record of vaccine
         /// </summary>
-        /// <param name="consultationId"></param>
+        /// <param name="vaccineId"></param>
         /// <returns></returns>
         public bool DeleteVaccine(int vaccineId)
         {
