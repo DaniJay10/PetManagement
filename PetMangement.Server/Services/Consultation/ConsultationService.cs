@@ -28,9 +28,9 @@ namespace PetMangement.Server.Services.Consultation
         /// </summary>
         /// <param name="consultationId"></param>
         /// <returns></returns>
-        public ConsultationModel GetConsultation(int consultationId)
+        public ConsultationModel GetConsultationById(int consultationId)
         {
-            return _repository.GetConsultation(consultationId);
+            return _repository.GetConsultationById(consultationId);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace PetMangement.Server.Services.Consultation
         /// </summary>
         /// <param name="consultation"></param>
         /// <returns></returns>
-        public bool InsertConsultation(CreateConsultDTO consultation)
+        public bool CreateConsultation(CreateConsultDTO consultation)
         {
             var consultModel = new ConsultationModel
             {
@@ -49,7 +49,7 @@ namespace PetMangement.Server.Services.Consultation
                 consultationDate = consultation.consultationDate,
             };
 
-            return _repository.InsertConsultation(consultModel);
+            return _repository.CreateConsultation(consultModel);
         }
 
         /// <summary>

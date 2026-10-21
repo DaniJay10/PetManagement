@@ -36,7 +36,7 @@ namespace PetMangement.Server.Controllers.Consultation
         [HttpGet("{consultationId}")]
         public IActionResult GetConsultationById(int consultationId)
         {
-            var consultation = _consultationService.GetConsultation(consultationId);
+            var consultation = _consultationService.GetConsultationById(consultationId);
             if (consultation == null)
                 return NotFound();
             return Ok(consultation);
@@ -49,9 +49,9 @@ namespace PetMangement.Server.Controllers.Consultation
         /// <param name="consultation"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult InsertConsultation([FromBody] CreateConsultDTO consultation)
+        public IActionResult CreateConsultation([FromBody] CreateConsultDTO consultation)
         {
-            var result = _consultationService.InsertConsultation(consultation);
+            var result = _consultationService.CreateConsultation(consultation);
             if (!result)
                 return BadRequest("Error al guardar");
             return StatusCode(201, result);

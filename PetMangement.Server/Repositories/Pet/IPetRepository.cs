@@ -15,14 +15,14 @@ namespace PetMangement.Server.Repositories.Pet
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public PetModel GetPet(int id);
+        public PetModel GetPetById(int id);
 
         /// <summary>
         /// Record one pet
         /// </summary>
         /// <param name="Pet"></param>
         /// <returns></returns>
-        public bool InsertPet(PetModel Pet);
+        public bool CreatePet(PetModel Pet);
 
         /// <summary>
         /// Update one record from pet

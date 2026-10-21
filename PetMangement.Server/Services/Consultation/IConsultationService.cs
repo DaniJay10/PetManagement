@@ -16,14 +16,14 @@ namespace PetMangement.Server.Services.Consultation
         /// </summary>
         /// <param name="consultationId"></param>
         /// <returns></returns>
-        public ConsultationModel GetConsultation(int consultationId);
+        public ConsultationModel GetConsultationById(int consultationId);
 
         /// <summary>
         /// Insert one record in the DB
         /// </summary>
         /// <param name="consultation"></param>
         /// <returns></returns>
-        public bool InsertConsultation(CreateConsultDTO consultation);
+        public bool CreateConsultation(CreateConsultDTO consultation);
 
         /// <summary>
         /// Update one record in the DB
