@@ -1,8 +1,10 @@
 using PetMangement.Server.Repositories.Consultation;
+using PetMangement.Server.Repositories.Deworming;
 using PetMangement.Server.Repositories.Pet;
 using PetMangement.Server.Repositories.Shower;
 using PetMangement.Server.Repositories.Vaccine;
 using PetMangement.Server.Services.Consultation;
+using PetMangement.Server.Services.Deworming;
 using PetMangement.Server.Services.Pet;
 using PetMangement.Server.Services.Shower;
 using PetMangement.Server.Services.Vaccine;
@@ -32,7 +34,7 @@ builder.Services.AddScoped<IPetRepository, PetRepository>();
 builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
 builder.Services.AddScoped<IVaccineRepository, VaccineRepository>();
 builder.Services.AddScoped<IShowerRepository, ShowerRepository>();
-
+builder.Services.AddScoped<IDewormingRepository, DewormingRepository>();
 
 
 //Services
@@ -40,7 +42,7 @@ builder.Services.AddScoped<IPetService, PetService>();
 builder.Services.AddScoped<IConsultationService, ConsultationService>();
 builder.Services.AddScoped<IVaccineService, VaccineService>();
 builder.Services.AddScoped<IShowerService, ShowerService>();
-
+builder.Services.AddScoped<IDewormingService, DewormingService>();
 
 
 var app = builder.Build();
