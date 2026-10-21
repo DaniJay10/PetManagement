@@ -26,6 +26,13 @@ namespace PetMangement.Server.Services.Vaccine
         public bool CreateVaccine(CreateVaccineDTO vaccine);
 
         /// <summary>
+        /// Update one record in the DB
+        /// </summary>
+        /// <param name="consultation"></param>
+        /// <returns></returns>
+        public bool UpdateVaccine(UpdateVaccineDTO vaccine);
+
+        /// <summary>
         /// Delete one record in the DB
         /// </summary>
         /// <param name="vaccineId"></param>
