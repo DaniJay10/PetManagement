@@ -11,6 +11,6 @@ namespace PetMangement.Server.Models
         [Required]
         public DateTime noveltyDate { get; set; }
         [Required]
-        public string descripcion { get; set; }
+        public string description { get; set; }
     }
 }
