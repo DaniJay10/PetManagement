@@ -1,7 +1,7 @@
 ﻿export const PetApp = () => {
   return (
     <>
-      <div>PetApp</div>
+      <div>Hola mundo</div>
     </>
   );
 };
