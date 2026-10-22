@@ -19,11 +19,11 @@ export const petApi = {
     return response.json();
   },
 
-  createPet: async (newPet: CreatePet) => {
+  createPet: async (pet: CreatePet) => {
     const response = await fetch(BASE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newPet),
+      body: JSON.stringify(pet),
     });
     if (!response.ok) {
       throw new Error("Error al crear la mascota");
