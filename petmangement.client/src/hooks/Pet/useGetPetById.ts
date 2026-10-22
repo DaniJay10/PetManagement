@@ -15,8 +15,10 @@ export const useGetPetById = (id: number) => {
       try {
         const data = await petApi.getPetById(id);
         setPet(data);
+        return data;
       } catch (err) {
         setError(err instanceof Error ? err.message : "An error has occurred");
+        return null;
       } finally {
         setLoading(false);
       }

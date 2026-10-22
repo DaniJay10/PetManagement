@@ -14,6 +14,7 @@ export const useDeletePet = () => {
       return response;
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error has occurred");
+      return null;
     } finally {
       setLoading(false);
     }
