@@ -1,6 +1,6 @@
 import type { CreateVaccine } from "../../interfaces/vaccine.interface";
 
-const BASE_URL = "https://localhost:7279/api/pet";
+const BASE_URL = "https://localhost:7279/api/vaccine";
 
 export const vaccineApi = {
   getVaccines: async () => {
