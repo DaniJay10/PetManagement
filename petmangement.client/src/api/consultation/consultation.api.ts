@@ -26,7 +26,7 @@ export const consultationApi = {
       body: JSON.stringify(consultation),
     });
     if (!response.ok) {
-      throw new Error("Failed creating data");
+      throw new Error("Failed recording data");
     }
     return response.json();
   },
