@@ -10,3 +10,10 @@ export interface CreateVaccine {
   vaccineType: string;
   applicationData: string;
 }
+
+export interface UpdateVaccine {
+  vaccineId: number;
+  petId: number;
+  vaccineType: string;
+  applicationData: string;
+}

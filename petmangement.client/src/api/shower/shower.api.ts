@@ -1,4 +1,7 @@
-import type { CreateShower } from "../../interfaces/shower.interface";
+import type {
+  CreateShower,
+  UpdateShower,
+} from "../../interfaces/shower.interface";
 
 const BASE_URL = "https://localhost:7279/api/shower";
 
@@ -28,8 +31,8 @@ export const showerApi = {
     }
     return response.json();
   },
-  updateShower: async (id: number, shower: CreateShower) => {
-    const response = await fetch(`${BASE_URL}/${id}`, {
+  updateShower: async (shower: UpdateShower) => {
+    const response = await fetch(`${BASE_URL}/${shower.showerId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(shower),

@@ -1,4 +1,7 @@
-import type { CreateDeworming } from "../../interfaces/deworming.interface";
+import type {
+  CreateDeworming,
+  UpdateDeworming,
+} from "../../interfaces/deworming.interface";
 
 const BASE_URL = "https://localhost:7279/api/deworming";
 
@@ -28,8 +31,8 @@ export const dewormingApi = {
     }
     return response.json();
   },
-  updateDeworming: async (id: number, deworming: CreateDeworming) => {
-    const response = await fetch(`${BASE_URL}/${id}`, {
+  updateDeworming: async (deworming: UpdateDeworming) => {
+    const response = await fetch(`${BASE_URL}/${deworming.dewormingId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(deworming),
