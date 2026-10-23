@@ -1,4 +1,4 @@
-import type { CreatePet } from "../../interfaces/pet.interface";
+import type { CreatePet, UpdatePet } from "../../interfaces/pet.interface";
 
 const BASE_URL = "https://localhost:7279/api/pet";
 
@@ -31,8 +31,8 @@ export const petApi = {
     return response.json();
   },
 
-  updatePet: async (id: number, updatedPet: CreatePet) => {
-    const response = await fetch(`${BASE_URL}/${id}`, {
+  updatePet: async (updatedPet: UpdatePet) => {
+    const response = await fetch(`${BASE_URL}/${updatedPet.petId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedPet),

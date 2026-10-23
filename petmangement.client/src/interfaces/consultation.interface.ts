@@ -14,3 +14,12 @@ export interface Createconsultation {
   diagnosis: string;
   notes: string;
 }
+
+export interface Updateconsultation {
+  consultationId: number;
+  petId: number;
+  consultationDate: string;
+  reason: string;
+  diagnosis: string;
+  notes: string;
+}

@@ -1,4 +1,7 @@
-import type { CreateVaccine } from "../../interfaces/vaccine.interface";
+import type {
+  CreateVaccine,
+  UpdateVaccine,
+} from "../../interfaces/vaccine.interface";
 
 const BASE_URL = "https://localhost:7279/api/vaccine";
 
@@ -28,8 +31,8 @@ export const vaccineApi = {
     }
     return response.json();
   },
-  updateVaccine: async (id: number, vaccine: CreateVaccine) => {
-    const response = await fetch(`${BASE_URL}/${id}`, {
+  updateVaccine: async (vaccine: UpdateVaccine) => {
+    const response = await fetch(`${BASE_URL}/${vaccine.vaccineId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(vaccine),

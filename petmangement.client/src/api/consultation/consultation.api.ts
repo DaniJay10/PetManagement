@@ -1,4 +1,7 @@
-import type { Createconsultation } from "../../interfaces/consultation.interface";
+import type {
+  Createconsultation,
+  Updateconsultation,
+} from "../../interfaces/consultation.interface";
 
 const BASE_URL = "https://localhost:7279/api/consultation";
 
@@ -31,15 +34,15 @@ export const consultationApi = {
     return response.json();
   },
 
-  updateConsultation: async (
-    id: number,
-    updateConsultation: Createconsultation,
-  ) => {
-    const response = await fetch(`${BASE_URL}/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updateConsultation),
-    });
+  updateConsultation: async (updateConsultation: Updateconsultation) => {
+    const response = await fetch(
+      `${BASE_URL}/${updateConsultation.consultationId}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updateConsultation),
+      },
+    );
     if (!response.ok) {
       throw new Error("Failed updtating data");
     }
