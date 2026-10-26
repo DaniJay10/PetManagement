@@ -17,23 +17,25 @@ export const PetList = () => {
 
   return (
     <div>
-      <div className="card" style={{ width: "18rem" }}>
-        <img className="card-img-top" src="..." alt="Mascota" />
+      {pets.map((pet) => (
+        <div key={pet.petId} className="card" style={{ width: "18rem" }}>
+          <img className="card-img-top" src="..." alt="Mascota" />
 
-        <div className="card-body">
-          <h5 className="card-title">Nombre de la mascota</h5>
+          <div className="card-body">
+            <h5 className="card-title">{pet.petName}</h5>
 
-          <p className="card-text">
-            Name: Spike
-            <br />
-            specie: Criollo caramelo
-          </p>
+            <p className="card-text">
+              BirhDate: {pet.birthDate}
+              <br />
+              Specie: {pet.petWeight}
+            </p>
 
-          <button type="button" className="btn btn-primary">
-            Ver expediente
-          </button>
+            <button type="button" className="btn btn-primary">
+              Ver expediente
+            </button>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
