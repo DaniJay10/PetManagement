@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:54518", "https://localhost:54518")
+        policy.WithOrigins("http://localhost:57126", "https://localhost:57126")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -61,6 +61,8 @@ app.MapStaticAssets();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+app.UseCors("ReactPolicy");
 
 app.UseAuthorization();
 

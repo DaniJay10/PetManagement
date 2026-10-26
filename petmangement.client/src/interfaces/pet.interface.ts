@@ -6,7 +6,7 @@ export interface Pet {
   birthDate: string;
   petWeight: number;
   petSize: string;
-  dewormingFrecuency: number;
+  dewormingFrequency: number;
 }
 
 export interface CreatePet {
@@ -16,7 +16,7 @@ export interface CreatePet {
   birthDate: string;
   petWeight: number;
   petSize: string;
-  dewormingFrecuency: number;
+  dewormingFrequency: number;
 }
 
 export interface UpdatePet {
@@ -27,5 +27,5 @@ export interface UpdatePet {
   birthDate: string;
   petWeight: number;
   petSize: string;
-  dewormingFrecuency: number;
+  dewormingFrequency: number;
 }
