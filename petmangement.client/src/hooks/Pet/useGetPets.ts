@@ -28,7 +28,7 @@ export const useGetPets = () => {
 
   return {
     pets,
-    getPets,
+    // getPets,
     loading,
     error,
   };

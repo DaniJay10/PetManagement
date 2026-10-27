@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../../css/PetList.css";
 
 export const PetList = () => {
-  const { pets, getPets, loading, error } = useGetPets();
+  const { pets, loading, error } = useGetPets();
   const navigate = useNavigate();
 
   if (error) return <div>Error: {error}</div>;
@@ -38,8 +38,12 @@ export const PetList = () => {
               Specie: {pet.specie}
             </p>
 
-            <button type="button" className="btn btn-primary">
-              Ver expediente
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => navigate(`/pet/${pet.petId}`)}
+            >
+              Show expedient
             </button>
           </div>
         </div>
