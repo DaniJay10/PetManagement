@@ -8,6 +8,8 @@ export const useGetPets = () => {
   const [error, setError] = useState<string | null>(null);
 
   const getPets = async () => {
+    setLoading(true);
+    setError(null);
     try {
       const data = await petApi.getPets();
       setPets(data);

@@ -12,7 +12,7 @@ export const useGetDewormingById = (id: number) => {
 
     const chargeDeworming = async () => {
       setLoading(true);
-
+      setError(null);
       try {
         const data = await dewormingApi.getDewormingById(id);
         setDeworming(data);

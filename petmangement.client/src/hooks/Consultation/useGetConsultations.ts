@@ -9,7 +9,7 @@ export const useGetConsultations = () => {
 
   const getConsultations = async () => {
     setLoading(true);
-
+    setError(null);
     try {
       const data = await consultationApi.getConsultations();
       setConsultations(data);

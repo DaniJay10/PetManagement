@@ -9,7 +9,7 @@ export const useGetVaccines = () => {
 
   const getVaccines = async () => {
     setLoading(false);
-
+    setError(null);
     try {
       const data = await vaccineApi.getVaccines();
       setVaccines(data);

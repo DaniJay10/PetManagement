@@ -8,6 +8,7 @@ export const useCreateDeworming = () => {
 
   const createDeworming = async (deworming: CreateDeworming) => {
     setLoading(true);
+    setError(null);
     try {
       const response = await dewormingApi.createDeworming(deworming);
       return response;

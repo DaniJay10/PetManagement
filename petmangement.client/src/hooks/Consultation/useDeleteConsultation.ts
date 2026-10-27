@@ -7,7 +7,7 @@ export const useDeleteConsultation = () => {
 
   const deleteConsultation = async (consultationId: number) => {
     setLoading(true);
-
+    setError(null);
     try {
       const response = await consultationApi.deleteConsultation(consultationId);
       return response;

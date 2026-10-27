@@ -12,7 +12,7 @@ export const useGetConsultationById = (id: number) => {
 
     const chargeConsultation = async () => {
       setLoading(true);
-
+      setError(null);
       try {
         const data = await consultationApi.getConsultationById(id);
         setConsultation(data);

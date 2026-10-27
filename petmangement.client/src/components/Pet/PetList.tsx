@@ -1,16 +1,22 @@
 import { useGetPets } from "../../hooks/Pet/useGetPets";
+import { useNavigate } from "react-router-dom";
 
 export const PetList = () => {
   const { pets, getPets, loading, error } = useGetPets();
+  const navigate = useNavigate();
 
   if (error) return <div>Error: {error}</div>;
   if (loading) return <div>Cargando...</div>;
   if (!loading && pets.length === 0)
     return (
       <div>
-        <div>Crea tu mascota</div>
-        <button type="button" className="btn btn-primary btn-lg">
-          Crear
+        <div>No tienes ninguna mascota registrada</div>
+        <button
+          type="button"
+          className="btn btn-primary btn-lg"
+          onClick={() => navigate("/petform")}
+        >
+          Crear Mascota
         </button>
       </div>
     );
@@ -27,7 +33,7 @@ export const PetList = () => {
             <p className="card-text">
               BirhDate: {pet.birthDate}
               <br />
-              Specie: {pet.petWeight}
+              Specie: {pet.specie}
             </p>
 
             <button type="button" className="btn btn-primary">

@@ -8,6 +8,7 @@ export const useUpdateNovelty = () => {
 
   const updateNovelty = async (novelty: UpdateNovelty) => {
     setLoading(true);
+    setError(null);
     try {
       const response = await noveltyApi.updateNovelty(novelty);
       return response;

@@ -8,6 +8,7 @@ export const useCreateNovelty = () => {
 
   const createNovelty = async (novelty: CreateNovelty) => {
     setLoading(true);
+    setError(null);
     try {
       const response = await noveltyApi.createNovelty(novelty);
       return response;

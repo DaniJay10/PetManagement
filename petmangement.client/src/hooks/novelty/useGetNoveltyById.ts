@@ -12,6 +12,7 @@ export const useGetNoveltyById = (id: number) => {
 
     const chargeNovelty = async () => {
       setLoading(true);
+      setError(null);
       try {
         const data = await noveltyApi.GetNoveltyById(id);
         setNovelty(data);

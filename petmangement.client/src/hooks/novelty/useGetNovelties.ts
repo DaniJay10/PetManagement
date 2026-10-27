@@ -9,6 +9,7 @@ export const useGetNovelties = () => {
 
   const GetNovelties = async () => {
     setLoading(true);
+    setError(null);
     try {
       const data = await noveltyApi.GetNovelties();
       +setNovelties(data);

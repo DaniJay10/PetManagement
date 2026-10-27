@@ -8,7 +8,7 @@ export const useCreateConsultation = () => {
 
   const createConsultation = async (consultation: Createconsultation) => {
     setLoading(true);
-
+    setError(null);
     try {
       const response = await consultationApi.createConsultation(consultation);
       return response;

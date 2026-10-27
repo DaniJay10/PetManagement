@@ -8,6 +8,7 @@ export const useCreateShower = () => {
 
   const createShower = async (shower: CreateShower) => {
     setLoading(true);
+    setError(null);
 
     try {
       const response = await showerApi.createShower(shower);

@@ -7,7 +7,7 @@ export const useDeleteShower = () => {
 
   const deleteShower = async (id: number) => {
     setLoading(true);
-
+    setError(null);
     try {
       const response = await showerApi.deleteShower(id);
       return response;
