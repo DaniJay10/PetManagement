@@ -1,4 +1,4 @@
-import { PetList } from "../components/Pet/PetList";
+import { PetList } from "../../components/Pet/PetList";
 
 export const HomePage = () => {
   return (

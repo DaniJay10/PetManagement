@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "../pages/HomePage";
-import { PetForm } from "../components/Pet/PetForm";
+import { HomePage } from "../pages/Home/HomePage";
+import { NewPetForm } from "../pages/Pet/NewPetForm";
 
 export const appRouter = createBrowserRouter([
   {
@@ -9,6 +9,6 @@ export const appRouter = createBrowserRouter([
   },
   {
     path: "/petform",
-    element: <PetForm />,
+    element: <NewPetForm />,
   },
 ]);
