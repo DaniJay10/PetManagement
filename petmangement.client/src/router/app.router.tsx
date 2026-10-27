@@ -12,5 +12,13 @@ export const appRouter = createBrowserRouter([
     path: "/petform",
     element: <NewPetForm />,
   },
+  {
+    path: "/petform/",
+    element: <NewPetForm />,
+  },
+  {
+    path: "/petform/:petId",
+    element: <NewPetForm />,
+  },
   { path: "/pet/:petId", element: <PetExpedient /> },
 ]);

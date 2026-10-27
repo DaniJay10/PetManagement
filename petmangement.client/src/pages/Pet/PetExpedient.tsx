@@ -19,12 +19,19 @@ export const PetExpedient = () => {
       )}
       <div>Expedient of pet</div>
       <button
+        className="btn btn-sm btn-primary me-2"
+        onClick={() => navigate(`/petform/${id}`)}
+      >
+        <i className="bi bi-pencil-fill"></i>
+        Update
+      </button>
+      <button
         className="btn btn-sm btn-danger"
         onClick={() => {
           setViewModal(true);
         }}
       >
-        <i className="bi bi-trash3-fill"></i>Eliminar
+        <i className="bi bi-trash3-fill"></i>Delete
       </button>
     </div>
   );
