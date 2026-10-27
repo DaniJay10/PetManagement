@@ -1,5 +1,6 @@
 import { useGetPets } from "../../hooks/Pet/useGetPets";
 import { useNavigate } from "react-router-dom";
+import "../../css/PetList.css";
 
 export const PetList = () => {
   const { pets, getPets, loading, error } = useGetPets();
@@ -9,29 +10,30 @@ export const PetList = () => {
   if (loading) return <div>Cargando...</div>;
   if (!loading && pets.length === 0)
     return (
-      <div>
-        <div>No tienes ninguna mascota registrada</div>
+      <div className="pet-empty">
+        <div className="pet-empty-message">You don't have pets registers</div>
+
         <button
           type="button"
-          className="btn btn-primary btn-lg"
+          className="pet-create-button"
           onClick={() => navigate("/petform")}
         >
-          Crear Mascota
+          Create Pet
         </button>
       </div>
     );
 
   return (
-    <div>
+    <div className="pet-list">
       {pets.map((pet) => (
-        <div key={pet.petId} className="card" style={{ width: "18rem" }}>
+        <div key={pet.petId} className="card pet-card">
           <img className="card-img-top" src="..." alt="Mascota" />
 
           <div className="card-body">
             <h5 className="card-title">{pet.petName}</h5>
 
             <p className="card-text">
-              BirhDate: {pet.birthDate}
+              BirthDate: {pet.birthDate}
               <br />
               Specie: {pet.specie}
             </p>

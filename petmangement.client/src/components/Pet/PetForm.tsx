@@ -3,6 +3,7 @@ import { useCreatePet } from "../../hooks/Pet/useCreatePet";
 import { useUpdatePet } from "../../hooks/Pet/useUpdatePet";
 import { useState, useEffect } from "react";
 import { useGetPetById } from "../../hooks/Pet/useGetPetById";
+import "../../css/PetForm.css";
 
 interface Props {
   petId?: number;
@@ -76,6 +77,7 @@ export const PetForm = ({ petId }: Props) => {
   };
 
   //listas desplegables
+  const species = ["Dog", "Cat", "Bird", "Turtle", "Fish"];
   const sizes = ["S", "M", "L", "XL"];
 
   //?HTML
@@ -106,18 +108,24 @@ export const PetForm = ({ petId }: Props) => {
         {/*specie */}
         <div className="form-group">
           <label className="form-label">Specie</label>
-          <input
-            type="text"
+          <select
             className="form-input"
             value={specie}
             onChange={(e) => setSpecie(e.target.value)}
             required
-          />
+          >
+            <option value="">Select specie</option>
+            {species.map((specie) => (
+              <option key={specie} value={specie}>
+                {specie}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/*breed*/}
         <div className="form-group">
-          <label className="form-label">breed</label>
+          <label className="form-label">Breed</label>
           <input
             className="form-input"
             value={breed}
@@ -128,7 +136,7 @@ export const PetForm = ({ petId }: Props) => {
 
         {/*birthDate */}
         <div className="form-group">
-          <label className="form-label">BirthDate</label>
+          <label className="form-label">Birth Date</label>
           <input
             type="date"
             className="form-input"
@@ -140,7 +148,7 @@ export const PetForm = ({ petId }: Props) => {
 
         {/*petWeight */}
         <div className="form-group">
-          <label className="form-label">petWeight</label>
+          <label className="form-label">Weight (kg)</label>
           <input
             type="number"
             min="0"
@@ -160,7 +168,7 @@ export const PetForm = ({ petId }: Props) => {
             onChange={(e) => setPetSize(e.target.value)}
             required
           >
-            <option value="">Seleccione size</option>
+            <option value="">Select size</option>
             {sizes.map((size) => (
               <option key={size} value={size}>
                 {size}
@@ -171,7 +179,7 @@ export const PetForm = ({ petId }: Props) => {
 
         {/*dewormingF */}
         <div className="form-group">
-          <label className="form-label">dewormingFrequency months</label>
+          <label className="form-label">DewormingFrequency (months)</label>
           <input
             type="number"
             min="0"
