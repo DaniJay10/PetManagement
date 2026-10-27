@@ -7,7 +7,7 @@ export const useDeleteVaccine = () => {
 
   const deleteVaccine = async (id: number) => {
     setLoading(false);
-
+    setError(null);
     try {
       const response = await vaccineApi.deleteVaccine(id);
       return response;

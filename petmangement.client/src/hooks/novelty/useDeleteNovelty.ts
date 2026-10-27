@@ -7,6 +7,7 @@ export const useDeleteNovelty = () => {
 
   const deleteNovelty = async (id: number) => {
     setLoading(true);
+    setError(null);
     try {
       const response = await noveltyApi.deleteNovelty(id);
       return response;

@@ -12,7 +12,7 @@ export const useGetShoweById = (id: number) => {
 
     const chargeShower = async () => {
       setLoading(true);
-
+      setError(null);
       try {
         const data = await showerApi.getShowerById(id);
         setShower(data);

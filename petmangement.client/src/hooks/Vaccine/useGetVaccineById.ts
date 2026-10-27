@@ -12,7 +12,7 @@ export const useGetVaccineById = (id: number) => {
 
     const chargeVaccine = async () => {
       setLoading(true);
-
+      setError(null);
       try {
         const data = await vaccineApi.getVaccineById(id);
         setVaccine(data);

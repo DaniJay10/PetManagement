@@ -9,6 +9,7 @@ export const useGetDewormings = () => {
 
   const getDewormings = async () => {
     setLoading(true);
+    setError(null);
     try {
       const data = await dewormingApi.getDewormings();
       setDewormings(data);

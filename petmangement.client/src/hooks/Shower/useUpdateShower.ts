@@ -8,7 +8,7 @@ export const useUpdateShower = () => {
 
   const updateShower = async (shower: UpdateShower) => {
     setLoading(true);
-
+    setError(null);
     try {
       const response = await showerApi.updateShower(shower);
       return response;

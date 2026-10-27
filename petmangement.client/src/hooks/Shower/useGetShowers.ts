@@ -9,7 +9,7 @@ export const useGetShowers = () => {
 
   const getShowers = async () => {
     setLoading(true);
-
+    setError(null);
     try {
       const data = await showerApi.getShowers();
       setShowers(data);

@@ -1,0 +1,181 @@
+/* Fondo y contenedor principal */
+.form-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 36px 40px;
+  background-color: #ffffff;
+  border: 1px solid #e3ebdf;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(42, 67, 43, 0.08);
+  color: #2f3e32;
+}
+
+/* Título */
+.form-title {
+  margin: 0 0 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8eee5;
+  color: #315b35;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+/* Formulario: dos columnas */
+.form-container form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 22px;
+}
+
+/* Cada campo */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* Etiquetas */
+.form-label {
+  color: #435447;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Inputs y listas desplegables */
+.form-input,
+.form-group input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #d6e1d3;
+  border-radius: 9px;
+  background-color: #fbfdf9;
+  color: #2f3e32;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Estado enfocado */
+.form-input:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #78b96e;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(123, 201, 111, 0.18);
+}
+
+/* Texto de ejemplo */
+.form-input::placeholder,
+.form-group input::placeholder {
+  color: #9aa69a;
+}
+
+/* Mensaje de error */
+.error-message {
+  margin: 0 0 24px;
+  padding: 13px 16px;
+  border: 1px solid #f0caca;
+  border-radius: 9px;
+  background-color: #fff5f5;
+  color: #a93232;
+  font-size: 0.92rem;
+}
+
+/* Contenedor de botones: ocupa ambas columnas */
+.button-group {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #e8eee5;
+}
+
+/* Botón principal */
+.submit-btn {
+  min-height: 46px;
+  padding: 12px 24px;
+  border: 1px solid #4d9145;
+  border-radius: 9px;
+  background-color: #4d9145;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #397a34;
+  border-color: #397a34;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Botón cancelar */
+.cancel-btn {
+  min-height: 46px;
+  padding: 12px 24px;
+  border: 1px solid #d6e1d3;
+  border-radius: 9px;
+  background-color: #ffffff;
+  color: #526254;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #f2f6ef;
+  border-color: #b9cbb4;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 640px) {
+  .form-container {
+    width: calc(100% - 32px);
+    margin: 24px auto;
+    padding: 26px 20px;
+    box-sizing: border-box;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+  }
+
+  .form-container form {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 18px;
+  }
+
+  .button-group {
+    flex-direction: column-reverse;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}

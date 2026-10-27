@@ -8,7 +8,7 @@ export const useUpdateVaccine = () => {
 
   const updateVaccine = async (vaccine: UpdateVaccine) => {
     setLoading(false);
-
+    setError(null);
     try {
       const response = await vaccineApi.updateVaccine(vaccine);
       return response;
