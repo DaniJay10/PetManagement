@@ -1,6 +1,7 @@
 import { useGetPets } from "../../hooks/Pet/useGetPets";
 import { useNavigate } from "react-router-dom";
 import "../../css/PetList.css";
+import { CreatePetButton } from "./CreatePetButton";
 
 export const PetList = () => {
   const { pets, loading, error } = useGetPets();
@@ -8,20 +9,7 @@ export const PetList = () => {
 
   if (error) return <div>Error: {error}</div>;
   if (loading) return <div>Cargando...</div>;
-  if (!loading && pets.length === 0)
-    return (
-      <div className="pet-empty">
-        <div className="pet-empty-message">You don't have pets registers</div>
-
-        <button
-          type="button"
-          className="pet-create-button"
-          onClick={() => navigate("/petform")}
-        >
-          Create Pet
-        </button>
-      </div>
-    );
+  if (!loading && pets.length === 0) return <CreatePetButton />;
 
   return (
     <div className="pet-list">
@@ -45,6 +33,9 @@ export const PetList = () => {
             >
               Show expedient
             </button>
+          </div>
+          <div>
+            <CreatePetButton />
           </div>
         </div>
       ))}
