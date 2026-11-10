@@ -1,4 +1,4 @@
-export interface consultation {
+export interface Consultation {
   consultationId: number;
   petId: number;
   consultationDate: string;
