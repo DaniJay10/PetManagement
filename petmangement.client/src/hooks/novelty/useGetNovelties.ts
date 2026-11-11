@@ -12,7 +12,7 @@ export const useGetNovelties = () => {
     setError(null);
     try {
       const data = await noveltyApi.GetNovelties();
-      +setNovelties(data);
+      setNovelties(data);
       return data;
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error has occurred");
