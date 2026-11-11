@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PetDeleteModal } from "../../components/Pet/PetDeleteModal";
 import { useExpedient } from "../../hooks/Expedient/useExpedient";
 import { MedicalRecordsSummary } from "../../components/Expedient/MedicalRecordSummary";
+import { RecentActivity } from "../../components/Expedient/RecentActivity";
 
 export const PetExpedient = () => {
   const { petId } = useParams();
@@ -74,6 +75,8 @@ export const PetExpedient = () => {
           </div>
 
           <MedicalRecordsSummary expedient={expedient} />
+
+          <RecentActivity expedient={expedient} />
 
           {/* Update */}
           <button
