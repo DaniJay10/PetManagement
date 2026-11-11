@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PetDeleteModal } from "../../components/Pet/PetDeleteModal";
 import { useExpedient } from "../../hooks/Expedient/useExpedient";
+import { MedicalRecordsSummary } from "../../components/Expedient/MedicalRecordSummary";
 
 export const PetExpedient = () => {
   const { petId } = useParams();
@@ -72,10 +73,16 @@ export const PetExpedient = () => {
             </div>
           </div>
 
+          <MedicalRecordsSummary expedient={expedient} />
+
           {/* Update */}
           <button
             className="btn btn-sm btn-primary me-2"
-            onClick={() => navigate(`/petform/${id}`)}
+            onClick={() =>
+              navigate(`/petform/${id}`, {
+                state: { from: `/pet/${id}` },
+              })
+            }
           >
             <i className="bi bi-pencil-fill"></i>
             Update
