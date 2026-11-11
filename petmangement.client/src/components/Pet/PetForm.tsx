@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useCreatePet } from "../../hooks/Pet/useCreatePet";
 import { useUpdatePet } from "../../hooks/Pet/useUpdatePet";
 import { useState, useEffect } from "react";
@@ -12,6 +12,7 @@ interface Props {
 export const PetForm = ({ petId }: Props) => {
   const isEditing = !!petId;
   const navigate = useNavigate();
+  const location = useLocation();
 
   //? hook create
   const { createPet, loading: creating, error: createError } = useCreatePet();
@@ -203,9 +204,9 @@ export const PetForm = ({ petId }: Props) => {
           <button
             type="button"
             className="cancel-btn"
-            onClick={() => navigate("/")}
+            onClick={() => navigate(location.state?.from || "/")}
           >
-            Cancelar
+            Cancel
           </button>
         </div>
       </form>

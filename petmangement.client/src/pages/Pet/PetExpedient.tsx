@@ -75,7 +75,11 @@ export const PetExpedient = () => {
           {/* Update */}
           <button
             className="btn btn-sm btn-primary me-2"
-            onClick={() => navigate(`/petform/${id}`)}
+            onClick={() =>
+              navigate(`/petform/${id}`, {
+                state: { from: `/pet/${id}` },
+              })
+            }
           >
             <i className="bi bi-pencil-fill"></i>
             Update
