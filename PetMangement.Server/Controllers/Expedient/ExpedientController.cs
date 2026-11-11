@@ -19,7 +19,7 @@ namespace PetMangement.Server.Controllers.Expedient
         /// </summary>
         /// <param name="petId"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{petId}")]
         public IActionResult GetExpedientByPetId(int petId)
         {
             var expedient = _expedientService.GetExpedientByPetId(petId);

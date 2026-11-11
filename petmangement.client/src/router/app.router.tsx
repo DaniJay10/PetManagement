@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "../pages/Home/HomePage";
+import { PetList } from "../pages/Home/PetList";
 import { NewPetForm } from "../pages/Pet/NewPetForm";
 import { PetExpedient } from "../pages/Pet/PetExpedient";
 
 export const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <PetList />,
   },
   {
     path: "/petform",
