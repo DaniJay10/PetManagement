@@ -14,19 +14,13 @@ export const PetForm = ({ petId }: Props) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  //? hook create
   const { createPet, loading: creating, error: createError } = useCreatePet();
-
-  //? hook GetPetById
   const { pet, loading: getting, error: getError } = useGetPetById(petId || 0);
-  //   //? hook update
   const { updatePet, loading: updating, error: updateError } = useUpdatePet();
 
-  //Group of loadings and errors
   const loading = creating || updating;
   const error = createError || updateError || getError;
 
-  // atributes of pet
   const [petName, setPetName] = useState("");
   const [specie, setSpecie] = useState("");
   const [breed, setBreed] = useState("");
@@ -35,7 +29,6 @@ export const PetForm = ({ petId }: Props) => {
   const [petSize, setPetSize] = useState("");
   const [dewormingF, setDewormingF] = useState(0);
 
-  //charge data if is update mode
   useEffect(() => {
     if (pet && isEditing) {
       setPetName(pet.petName);
@@ -81,7 +74,6 @@ export const PetForm = ({ petId }: Props) => {
   const species = ["Dog", "Cat", "Bird", "Turtle", "Fish"];
   const sizes = ["S", "M", "L", "XL"];
 
-  //?HTML
   return (
     <div className="form-container">
       <h2 className="form-title">
